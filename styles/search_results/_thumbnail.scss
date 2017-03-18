@@ -1,0 +1,48 @@
+.search-result{
+	width:25%;
+	height:150px;
+	margin-top:10px;
+	border-radius:5px;
+	margin-left:5px;
+	margin-bottom: 5px;
+	background-size: cover;
+	box-shadow:0px 0px 1px 1px $blue;
+	position:relative;
+
+	&:hover{
+		box-shadow:0px 0px 3px 3px $blue;
+		.overlay{ opacity: 0.4;}
+	}	
+}	
+		
+.overlay{
+	@include overlay(2);
+	background:black;
+	opacity: 0;
+	overflow: hidden;
+	height: 100%;
+	transition: opacity 500ms;
+}
+		
+.search-result h4{
+	color:white;
+	background:$blue;
+	text-align: center;
+	padding:4px;
+	@include overlay(3);
+	@include textOutline(#000); 
+}
+
+.import-btn, .hidden-btn{
+	@extend .button-reset;
+	@include overlay(3);
+	font-weight:bold;		
+	bottom:3px;
+	left:0;
+}
+
+.hidden-btn{
+	background:lighten($blue,40%);
+	color:white;
+	z-index:0;
+}

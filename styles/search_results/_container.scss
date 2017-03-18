@@ -1,0 +1,35 @@
+
+#search-result-container{
+	display:flex;
+	padding:10px;
+	flex-wrap:wrap;
+	justify-content:space-around;
+}	
+
+.search-results-header, .search-results-footer{
+	text-align:center;
+	padding-top:15px;
+	padding-bottom:10px;
+}
+.search-results-footer{
+	background:white;
+	border-top:1px dotted black;
+}
+
+.button-group{
+	display: flex;
+	justify-content: center;
+}
+
+.arrow-btn{
+	@extend .button-reset;
+	margin-left: 3px;
+	margin-right: 3px;
+	background:none;
+	font-size: 1em;
+	color:darken($blue,10%);
+	transition: color 0.2s;
+	&:hover{
+		color:lighten($blue,10%);
+	}
+}

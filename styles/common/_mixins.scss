@@ -1,0 +1,66 @@
+@mixin centerContent($width,$top){
+	width:$width;
+	margin:$top auto;
+	text-align:center;
+}
+
+@mixin fullSize(){
+	width:100%;
+	height:100%;
+	min-height:100%;
+}
+
+.button-reset{
+	 border:none;
+	outline:none;
+}
+
+@mixin Button($bg,$color){
+	background:$bg;
+	box-shadow:inset 0 1px 1px 1px white;
+	border:none;
+	border-radius:2px;
+	margin-left:10px;
+	padding-top:4px;
+	padding-bottom:3px;
+	color:$color;
+	opacity:1;
+	transition:opacity 0.5s;
+	&:hover{
+		opacity: 0.8;
+	}
+	@media screen and(max-width:760px){
+		padding:2px;
+		margin-left:2px;
+		font-size:.8em;
+	}
+}
+
+@mixin animatedButton($bg,$color, $animation){
+	@include Button($bg,$color);
+	animation:$animation 3s;
+}
+
+@mixin overlay($z_index){
+	width:100%;
+	position:absolute;
+	z-index:$z_index;
+}
+
+@mixin listItem($color){
+	list-style:none;
+	color:$color;
+	width:90%;
+	cursor:pointer;
+	text-transform:capitalize;
+	font-family:"Tinos";
+	font-size:1.3em;
+	margin-top:10px;
+}
+
+@mixin textOutline($color){
+	text-shadow: -1px -1px 0 $color,
+    			  1px -1px 0 $color,
+    			 -1px 1px 0 $color,
+    			  1px 1px 0 $color; 
+}

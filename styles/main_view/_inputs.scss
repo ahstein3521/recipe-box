@@ -1,0 +1,33 @@
+.edit-field{
+	height:50px;
+	font-size:1.5em;
+	margin-top:3px;
+	margin-bottom:5px;
+	color:black;
+	width: 100%;
+	display:flex;
+}	
+
+.edit-field input{
+	width: 50%;
+	padding: 10px;
+  	border: solid 1px lighten($blue,20%);
+  	animation: expand 500ms;
+  	transition: box-shadow 0.3s, border 0.3s;
+  	
+  	&:focus{
+  		border: solid 1px #707070;
+		box-shadow: 0 0 5px 1px #969696;
+  	}
+}
+
+.delete-btn{ @include Button(#9b1313,white); }
+.add-btn{@include Button(#4d8f1b,white)}
+.link-btn{@include Button(#1b1b9b,white)}
+
+
+.update-btn{ @include animatedButton(lighten(blue,20%),black, fadeIn); }
+
+.save-btn{ @include animatedButton(#4d8f1b,white, fadeIn); }
+
+.cancel-btn{ @include animatedButton(#f2a415, #ad2330, fadeIn); }

@@ -1,0 +1,41 @@
+#side-bar, #side-bar-mobile{
+	background:$red;
+	width:30%;
+	overflow:auto;
+	height:100%;
+	position:absolute;
+	border-right:1px solid black;
+
+	#sidenav-ul{
+		padding:20px;
+	}	
+
+	h1,h3{
+		text-align: center;
+		font-style: italic;
+		background:lighten($red,10%);
+		padding:5px;
+		font-family: 'Purple Purse';
+		color:complement(lighten($red,20%));
+		@include textOutline($red);
+	}
+	h2{
+		
+		color:complement(lighten($red,30%));
+	}
+	.recipe-li{
+		@include listItem(white);
+	}
+
+	.recipe-li:hover{
+		color:lighten($yellow,15%);
+	}
+    
+    .li-active{
+		@include listItem($yellow);
+		&:before{
+			content:'\25BA';
+			margin-left:-15px;
+		}
+	}
+}
