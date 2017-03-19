@@ -32,6 +32,7 @@ class SearchBar extends Component{
 			selectQuery(index, list);
 		}else{
 			dispatcher("HIDE_SEARCH_RESULTS");
+			dispatcher("CLOSE_MENU");
 			submitQuery(this.state.text.trim(), list);
 			dispatcher("DESELECT_RECIPE");
 		}

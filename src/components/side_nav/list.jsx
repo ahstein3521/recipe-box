@@ -22,6 +22,7 @@ export default class RecipeList extends Component{
 
 	onSelect(index){
 		this.props.dispatcher("HIDE_SEARCH_RESULTS")
+		this.props.dispatcher("CLOSE_MENU");
 		this.props.selectRecipe(index);
 	}
 

@@ -1,11 +1,11 @@
-#side-bar, #side-bar-mobile{
-	background:$red;
-	width:30%;
-	overflow:auto;
-	height:100%;
-	position:absolute;
-	border-right:1px solid black;
-
+#side-bar{
+  width: 100%;
+  background:$red;
+  overflow:auto;   
+  position: absolute;
+  left:0;
+  top:0;
+  min-height:100%;
 	#sidenav-ul{
 		padding:20px;
 	}	

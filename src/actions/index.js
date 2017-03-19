@@ -58,6 +58,11 @@ export function toggleEditMode(newState){
 	return { type:"TOGGLE_EDIT", payload:newState }
 }
 
+export function updateScreenWidth(width){
+	const flag = (width > 780);
+	return {type:"UPDATE_SCREEN_WIDTH", payload:flag}
+}
+
 export function submitQuery(q, list){
 
 	const url = `${root_url}/recipes?_app_id=${api.appId}&_app_key=${api.key}&q=${q}`

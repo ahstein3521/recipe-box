@@ -18,13 +18,13 @@ class SearchResultsList extends Component{
 	}
 
 	importRecipe(id){
-		const [...list] = this.props.list;
+		const [...list] = this.props.search.history;
 		this.props.importRecipe(list, id);
 	}
 
 	renderResults(){
 
-		const list = this.props.list;
+		const list = this.props.search.history;
 		return this.props.search.results.map((recipe, i)=> (
 			<SearchResultThumbnail imported = {_.find(list, {recipe_id:recipe.recipe_id})}
 								   key = {i} 

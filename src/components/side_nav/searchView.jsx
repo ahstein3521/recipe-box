@@ -23,8 +23,9 @@ export default class SearchList extends Component{
 	}
 
 	onSelect(index){
-		this.props.dispatcher("HIDE_SEARCH_RESULTS");	
-		this.props.selectQuery(index, this.props.list);
+		this.props.dispatcher("HIDE_SEARCH_RESULTS");
+		this.props.dispatcher("CLOSE_MENU");	
+		this.props.selectQuery(index, this.props.search.history);
 	}
 	componentWillMount(){
 		const {search, fetchHistory} = this.props;
