@@ -7,7 +7,7 @@ const Button = props => {
 	return (
 
 		<button className={className} onClick={onClick} title={text} type={props.type || 'button'}>
-			<span className={'glyphicon glyphicon-'+icon}></span>
+			<i className={"fa fa-"+icon} aria-hidden={true}></i>
 			{" "+label}
 		</button>
 

@@ -38,8 +38,10 @@ class SideNav extends Component{
 		return(
 		<SlidingMenu menu = {this.props.menu} updateScreenWidth={this.props.updateScreenWidth} dispatcher ={this.props.dispatcher}>
 			<div id="side-bar">
-				<h1>Recipe Box</h1>
-				<div className='btn-panel'> {this.renderNav()} </div>	
+				<div className='menu-nav'>
+					<h1>Recipe Box</h1>
+					<div className='btn-panel'> {this.renderNav()} </div>
+				</div>	
 				{ this.renderView() }
 			</div>
 		</SlidingMenu>

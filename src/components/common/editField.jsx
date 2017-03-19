@@ -21,8 +21,8 @@ class EditField extends Component{
 
 		<div className='edit-field'>
 			<input type='text' defaultValue={this.state.text} onChange={e=> this.setState({text:e.target.value})}/>
-			<Button onClick={this.onSave} className='save-btn' icon='floppy-save' text='Update '/>
-			<Button onClick={this.handleClick} className='cancel-btn' icon='remove-circle' text='Cancel' />
+			<Button onClick={this.onSave} className='save-btn' icon='floppy-o' text='Update '/>
+			<Button onClick={this.handleClick} className='cancel-btn' icon='times' text='Cancel' />
 		</div>
 		)
 	}
@@ -43,7 +43,7 @@ class EditField extends Component{
 		const {fieldType, index} = this.props;
 		const update = this.state.text.trim();
 		const [...list] = this.props.list;
-    	let {...recipe} = this.props.recipe;
+    	let {...recipe} = this.props.selected;
 
     	if(!update.length) return this.handleEmptySubmit(recipe, list, fieldType, index);
 

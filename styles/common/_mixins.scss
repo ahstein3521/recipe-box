@@ -23,6 +23,7 @@
 	margin-left:10px;
 	padding-top:4px;
 	padding-bottom:3px;
+	cursor:pointer;
 	color:$color;
 	opacity:1;
 	transition:opacity 0.5s;
@@ -55,7 +56,7 @@
 	text-transform:capitalize;
 	font-family:"Tinos";
 	font-size:1.3em;
-	margin-top:10px;
+	margin-bottom:10px;
 }
 
 @mixin textOutline($color){

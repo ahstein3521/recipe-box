@@ -8,13 +8,16 @@
 	background-size: cover;
 	box-shadow:0px 0px 1px 1px $blue;
 	position:relative;
-
-	&:hover{
-		box-shadow:0px 0px 3px 3px $blue;
-		.overlay{ opacity: 0.4;}
-	}	
-}	
-		
+	
+}
+.search-result h4{
+	color:white;
+	background:$blue;
+	text-align: center;
+	width:95%;
+	@include overlay(3);
+	@include textOutline(#000); 
+}
 .overlay{
 	@include overlay(2);
 	background:black;
@@ -23,15 +26,36 @@
 	height: 100%;
 	transition: opacity 500ms;
 }
+.search-result-new{
+	cursor:pointer;
+	&:hover{
+		box-shadow:0px 0px 3px 3px $blue;
+		.overlay{ opacity: 0.4;}
+	}
+}	
+
+.search-result-selected{
+
+	.overlay{
+		opacity:0.5;
+	}
+	&:after{
+		width: 100%;
+		position:absolute;
+		bottom:10%;
+		z-index: 10;
+		color:#00ff21;
+		font-size: 3.7em;
+		font-weight: bolder;
+		text-align: center;
+		font-family: "FontAwesome";
+		content:"\f00c";
+		text-shadow:0 0 12px lighten(#00ff21,10%);
+	}
+}		
+
 		
-.search-result h4{
-	color:white;
-	background:$blue;
-	text-align: center;
-	padding:4px;
-	@include overlay(3);
-	@include textOutline(#000); 
-}
+
 
 .import-btn, .hidden-btn{
 	@extend .button-reset;
@@ -42,7 +66,5 @@
 }
 
 .hidden-btn{
-	background:lighten($blue,40%);
-	color:white;
-	z-index:0;
+	display:none;
 }

@@ -15,7 +15,7 @@ export default class SearchList extends Component{
 		return history.map((prop, index)=>( 
 			<RecipeListItem title={prop.query} 
 							index={index} 
-							   id={prop.query} 
+					    recipe_id={prop.query} 
 							  key={index} 
 					     selected={selectedId} 
 					     onSelect={this.onSelect}/>
@@ -42,7 +42,7 @@ export default class SearchList extends Component{
 		return (
 		<div>
 			<SearchBar list={history}/>
-			<ul className='sidenav-ul'>
+			<ul id='sidenav-ul'>
 				<h2>Recently Searched:</h2>
 				{this.renderUL()}
 			</ul>			

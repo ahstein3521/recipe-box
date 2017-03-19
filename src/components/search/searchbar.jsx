@@ -16,20 +16,20 @@ class SearchBar extends Component{
 	alreadySubmitted(){
 		const text = this.state.text.trim();
 		const regex = new RegExp(text, "i");
-				
-		for(let i in this.props.list){
-			const {query} = this.props.list[i]
+		const history = this.props.search.history		
+		for(let i in history){
+			const {query} = history[i]
 			if(regex.test(query)) return i;
 		};
 		return -1;
 	}
 	onSubmit(e){
 		e.preventDefault();
-		const {list, submitQuery, dispatcher, selectQuery} = this.props;
+		const {search, submitQuery, dispatcher, selectQuery} = this.props;
 		const index = this.alreadySubmitted();
 		
 		if(index > -1){
-			selectQuery(index, list);
+			selectQuery(index, search.history);
 		}else{
 			dispatcher("HIDE_SEARCH_RESULTS");
 			dispatcher("CLOSE_MENU");

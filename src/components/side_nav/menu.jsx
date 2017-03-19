@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import SideNav from './index.jsx';
-
+import Button from '../common/button.jsx';
 
 export default class SlidingMenu extends Component{
 	constructor(props){
@@ -12,14 +12,13 @@ export default class SlidingMenu extends Component{
 	}
 	
 	renderIcon(){
-		return <button className = 'toggle-btn' 
-		                 onClick = {()=> this.props.dispatcher("OPEN_MENU")}>
-		        Toggle</button>
+		return <Button className = 'toggle-btn' onClick = {()=> this.props.dispatcher("OPEN_MENU")} icon="bars"/>
+		      
 	}
 	renderMenu(){
 		return(
 			<div className="slider slider-mobile">
-				<button className='toggle-btn' onClick={()=> this.props.dispatcher("CLOSE_MENU")}>Toggle</button>
+				<Button className = 'toggle-btn' onClick = {()=> this.props.dispatcher("CLOSE_MENU")} icon="remove"/>
 				{this.props.children}
 			</div>
 		)

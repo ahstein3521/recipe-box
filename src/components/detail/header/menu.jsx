@@ -9,7 +9,7 @@ import Button from '../../common/button.jsx';
 
 const menuItems = [
 	{icon:"plus",className:"add-btn", action:"addIngredient",content:"Add ingredient" },
-	{icon:"trash",className:"delete-btn", action:"deleteRecipe",content:"Delete Recipe" }
+	{icon:"trash-o",className:"delete-btn", action:"deleteRecipe",content:"Delete Recipe" }
 ]
 
 class BannerMenu extends Component{

@@ -15,8 +15,13 @@
   width: 0%;
 }
 
-  .toggle-btn{
+.toggle-btn{
+    @extend .button-reset;
     position:absolute;
+    background:none;
+    cursor:pointer;
+    color:#e2d96a;
     right:20px;
     z-index: 1000;
-  }
+    font-size: 2em;
+}

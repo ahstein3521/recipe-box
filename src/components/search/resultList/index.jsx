@@ -8,7 +8,9 @@ import Attribution from './attribution.jsx'
 import SearchResultThumbnail from './thumbnail/index.jsx';
 import SearchResultsHeader from './header.jsx';
 
-import _ from 'lodash'
+Array.prototype.findByProp = function(r){
+	return this.some(({recipe_id})=> recipe_id == r.recipe_id)
+}
 
 class SearchResultsList extends Component{
 
@@ -18,15 +20,14 @@ class SearchResultsList extends Component{
 	}
 
 	importRecipe(id){
-		const [...list] = this.props.search.history;
+		const [...list] = this.props.recipes.list;
 		this.props.importRecipe(list, id);
 	}
 
 	renderResults(){
-
-		const list = this.props.search.history;
+		const list = this.props.recipes.list;
 		return this.props.search.results.map((recipe, i)=> (
-			<SearchResultThumbnail imported = {_.find(list, {recipe_id:recipe.recipe_id})}
+			<SearchResultThumbnail imported = {list.findByProp(recipe)}
 								   key = {i} 
 								recipe = {recipe} 
 							   onClick = {this.importRecipe} />

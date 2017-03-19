@@ -5,9 +5,11 @@
 	justify-content: space-between;
 	align-items:center;
 	border-bottom:2px solid darken($green,40%);
-
+	box-sizing:border-box;
+	height:180px;
 	@media screen and(max-width:760px){
 		padding:1px;
+		height:auto;
 	}
 }
 
@@ -19,7 +21,7 @@
 	border-bottom:1px solid darken($green,40%);
 
 	@media screen and(max-width:760px){
-		height:50px;
+		height:80px;
 		margin-left:5px;
 	}
 }
@@ -40,8 +42,12 @@
 	font-family: 'cursive';
 	color:white;
 	text-transform: capitalize;
-	h2{
+	#banner-title{
 		@include textOutline(#000);
+		@media screen and (max-width:760px){
+			padding-top:25px;
+			font-size:1em;
+		}
 	}	
 	.edit-field{ 
 		width: 100%; 

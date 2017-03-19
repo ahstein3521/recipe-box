@@ -8,7 +8,7 @@ const ListItem = ({ingredient, index}) => (
 		<EditField value={ingredient} fieldType='ingredients' index={index}>
 	        <span>
 	        	<strong>{ingredient}</strong>
-	          	<span className='glyphicon glyphicon-pencil'></span>
+	          	<i className='glyphicon glyphicon-pencil fa fa-pencil'></i>
 	        </span>
 	    </EditField>
 	</li>			
